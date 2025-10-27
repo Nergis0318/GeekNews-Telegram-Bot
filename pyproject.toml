@@ -1,0 +1,10 @@
+[project]
+name = "geeknews-telegram-bot"
+version = "0.1.0"
+description = "Add your description here"
+requires-python = ">=3.14"
+dependencies = [
+    "feedparser>=6",
+    "html-to-markdown>=2.5.0",
+    "python-telegram-bot[job-queue]>=22",
+]
