@@ -75,13 +75,13 @@ wheels = [
 
 [[package]]
 name = "html-to-markdown"
-version = "2.15.0"
+version = "2.18.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/1a/dd/49b12a67c3fee06dad03df72466530e357685afe3cf57fd458af1aa2bd83/html_to_markdown-2.15.0.tar.gz", hash = "sha256:eda8bec6eb60eccdb25869632768181376d4bf6fbd5e1a7d2bd6c7465e292024", size = 165803, upload-time = "2025-12-19T09:16:41.565Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0a/a0/5270c7f51ccc3a3dd74dcf60f07de95026b56f253c7931350c32f270d466/html_to_markdown-2.18.0.tar.gz", hash = "sha256:1ff34ffeae261afdba63f983a9b7c48ede78a94d64c08e78d28c98843e614680", size = 197078, upload-time = "2025-12-29T07:36:07.647Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5c/65/1fad855b17cdff6b9e3c600ceaba91a99e55ff8efab0daeff5616a8baeb8/html_to_markdown-2.15.0-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:940c89338ab77f52dded236d48503555b307f9540d082c6ea61914479de3d99e", size = 7322681, upload-time = "2025-12-19T09:16:35.484Z" },
-    { url = "https://files.pythonhosted.org/packages/b4/dd/998ed378f355a2f3c9098f2851e153600dadce771a15a71810602a7f5972/html_to_markdown-2.15.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:1b22e987b229c2bd059d599a7fbf44b83029a2ec08b5b1b32e7381d4e242fa36", size = 8054767, upload-time = "2025-12-19T09:16:37.689Z" },
-    { url = "https://files.pythonhosted.org/packages/c1/28/14459433c42737078cc246e587b31898f819a97bc8832ff95ae545213479/html_to_markdown-2.15.0-cp310-abi3-win_amd64.whl", hash = "sha256:31df269d6ede461926970ff6ab910e8479000088d0deba182e54e4788cfb4094", size = 8096277, upload-time = "2025-12-19T09:16:39.912Z" },
+    { url = "https://files.pythonhosted.org/packages/58/d8/ab15f439eb4d098f8a4d611624ef2b634a924dc33f6995f8314308f3e791/html_to_markdown-2.18.0-cp310-abi3-macosx_11_0_arm64.whl", hash = "sha256:81e00619ac3e942cf6de23b3a5273d4c3b0901abd79792a8f9ee609751352f37", size = 7459909, upload-time = "2025-12-29T07:36:01.807Z" },
+    { url = "https://files.pythonhosted.org/packages/3d/be/3f2bd455075df8f227cb65a3a1ce4f7e9f5bb7a6348e963ca4891d4c7d3b/html_to_markdown-2.18.0-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:4b2d93c93920ec74d93b82ac205a9393bfa6c702529cc1d30521f430018d9672", size = 8203616, upload-time = "2025-12-29T07:36:03.965Z" },
+    { url = "https://files.pythonhosted.org/packages/46/28/2703768a8893dc372747d6b225399327dd6765a14f1da810f3c4ddd8e57e/html_to_markdown-2.18.0-cp310-abi3-win_amd64.whl", hash = "sha256:c7125a993ccb3342708feb9ffcbb0e154e6a4fd5e42eb27ae8da63c9a02978b6", size = 8290627, upload-time = "2025-12-29T07:36:05.772Z" },
 ]
 
 [[package]]
