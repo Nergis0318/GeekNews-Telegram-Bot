@@ -1,8 +1,5 @@
 # GeekNews-Telegram-Bot
 
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDevNergis%2FGeekNews-Telegram-Bot.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FDevNergis%2FGeekNews-Telegram-Bot?ref=badge_shield)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDevNergis%2FGeekNews-Telegram-Bot.svg?type=shield&issueType=security)](https://app.fossa.com/projects/git%2Bgithub.com%2FDevNergis%2FGeekNews-Telegram-Bot?ref=badge_shield&issueType=security)
-
 RSS에서 GeekNews 기사를 가져와서 텔레그램으로 전송하는 봇입니다.
 
 ## 기능
@@ -76,5 +73,3 @@ uv run bot.py
 ## License
 
 - **GNU Affero General Public License v3.0**
-
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FDevNergis%2FGeekNews-Telegram-Bot.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FDevNergis%2FGeekNews-Telegram-Bot?ref=badge_large)
