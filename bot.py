@@ -7,6 +7,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 import re
 import os
+from urllib.parse import parse_qsl, urlencode, urlparse, urlunparse
 
 # Configure logging
 logging.basicConfig(
@@ -17,6 +18,18 @@ logger = logging.getLogger(__name__)
 # Database setup
 DB_PATH = os.getenv("DB_PATH", "bot.db")
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+
+def build_tracked_url(url: str) -> str:
+    """Add Telegram UTM params to a URL safely."""
+    if not url:
+        return url
+
+    parsed_url = urlparse(url)
+    query = dict(parse_qsl(parsed_url.query, keep_blank_values=True))
+    query["utm_source"] = "telegram"
+    query["utm_medium"] = "bot"
+    return urlunparse(parsed_url._replace(query=urlencode(query)))
 
 
 def init_db():
@@ -266,11 +279,8 @@ async def check_and_send_news(context: ContextTypes.DEFAULT_TYPE):
         new_articles_count = 0
         for entry in reversed(feed.entries):  # Process all articles
             link = entry.get("link", "")
-            article_id = (
-                re.search(r"\?id=(\d+)", link).group(1)
-                if re.search(r"\?id=(\d+)", link)
-                else None
-            )
+            id_match = re.search(r"[?&]id=(\d+)", link)
+            article_id = id_match.group(1) if id_match else None
 
             if not article_id or is_article_sent(article_id):
                 continue
@@ -278,6 +288,7 @@ async def check_and_send_news(context: ContextTypes.DEFAULT_TYPE):
             # Format message
             title = entry.get("title", "No title")
             link = entry.get("link", "")
+            tracked_link = build_tracked_url(link)
 
             content = entry.content[0].value if entry.content else ""
 
@@ -303,7 +314,7 @@ async def check_and_send_news(context: ContextTypes.DEFAULT_TYPE):
             message = f"📰 <b>{title}</b>\n\n"
             if content:
                 message += f"{content}\n\n"
-            message += f"🔗 <a href='{link}&utm_source=telegram&utm_medium=bot'>자세히 보기</a>"
+            message += f"🔗 <a href='{tracked_link}'>자세히 보기</a>"
 
             # Send to all subscribers
             for chat_id in subscribers:
@@ -325,7 +336,9 @@ async def check_and_send_news(context: ContextTypes.DEFAULT_TYPE):
                         # Retry without content
                         try:
                             simple_message = f"📰 <b>{title}</b>\n\n"
-                            simple_message += f"🔗 <a href='{link}&utm_source=telegram&utm_medium=bot'>자세히 보기</a>"
+                            simple_message += (
+                                f"🔗 <a href='{tracked_link}'>자세히 보기</a>"
+                            )
                             await context.bot.send_message(
                                 chat_id=chat_id,
                                 text=simple_message,
