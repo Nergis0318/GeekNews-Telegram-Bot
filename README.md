@@ -29,7 +29,7 @@ uv sync
 
 ## 파일 구조
 
-```
+```tree
 .
 ├── bot.py             # 메인 봇 코드
 ├── pyproject.toml     # UV 프로젝트 설정
