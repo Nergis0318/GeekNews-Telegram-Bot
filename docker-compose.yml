@@ -1,0 +1,14 @@
+services:
+  geeknews-telegram-bot:
+    image: ghcr.io/nergis0318/geeknews-telegram-bot:latest
+    build:
+      context: .
+    container_name: geeknews-telegram-bot
+    env_file:
+      - path: .env
+        required: true
+    environment:
+      DB_PATH: /data/bot.db
+    volumes:
+      - ./db:/data
+    restart: unless-stopped
